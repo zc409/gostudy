@@ -15,6 +15,9 @@ func main() {
 
 	//切片排序
 	var a1 = [...]int{10, 1, 5, 3}
+	a2 := []int{3, 1, 4, 6, 10, 9}
 	sort.Ints(a1[:])
-	fmt.Println(a1) //[1 3 5 10]
+	sort.Ints(a2)
+	fmt.Printf("a1=%v,type=%T\n", a1, a1) //[1 3 5 10]
+	fmt.Printf("a2=%v,type=%T\n", a2, a2)
 }
