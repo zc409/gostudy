@@ -2,26 +2,21 @@ package main
 
 import (
 	"fmt"
-	"sort"
-	"strings"
 )
 
 func main() {
-	s1 := "how do you do how are you"
-	s2 := strings.Split(s1, " ")
-	//	fmt.Printf("s2=%v,type(s2)=%T,len(s2)=%d,cap(s2)=%d\n", s2, s2, len(s2), cap(s2))
-	countmap := make(map[string]int, 10)
-	for _, x := range s2 {
-		countmap[x]++
+	hui := true
+	s1 := "你好heoeh好你"
+	s2 := []rune(s1)
+	s3 := len(s2) / 2
+	for i := 0; i < s3; i++ {
+		if s2[i] != s2[len(s2)-1-i] {
+			hui = false
+		}
 	}
-	fmt.Println(s1)
-	//对map按照key进行排序
-	s3 := []string{}
-	for key := range countmap {
-		s3 = append(s3, key)
-	}
-	sort.Strings(s3)
-	for _, key := range s3 {
-		fmt.Printf("%s %d\n", key, countmap[key])
+	if hui == true {
+		fmt.Println("this is hui")
+	} else {
+		fmt.Println("this is not hui")
 	}
 }
