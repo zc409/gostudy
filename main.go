@@ -5,19 +5,11 @@ import (
 )
 
 func main() {
-	hui := true
-	s1 := "你好heoeh好你"
-	s2 := []rune(s1)
-	fmt.Printf("s2=%v\n", s2)
-	s3 := len(s2) / 2
-	for i := 0; i < s3; i++ {
-		if s2[i] != s2[len(s2)-1-i] {
-			hui = false
-		}
-	}
-	if hui == true {
-		fmt.Println("this is hui")
-	} else {
-		fmt.Println("this is not hui")
-	}
+	var s1 = new(int)
+	var s2 = make(map[string]int, 3)
+	*s1 = 10
+	s2["wuhan"] = 1
+	s2["cq"] = 2
+	fmt.Printf("%v\n", s1)
+	fmt.Printf("%v\n", s2)
 }
