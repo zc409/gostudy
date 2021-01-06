@@ -1,26 +1,33 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type dog struct {
+type student struct {
+	id   int
 	name string
 }
 
-func newDog(name string) dog {
-	return dog{
+type mymap map[int]*student
+
+var allstudent mymap
+
+// func newStudent(id int,name string)*student{
+// 	return &student{
+// 		id: id,
+// 		name: name,
+// 	}
+// }
+
+func (a *mymap) addnew(id int, name string) {
+	var newstudent = student{
+		id:   id,
 		name: name,
 	}
-}
-
-func (d dog) wang() {
-	fmt.Printf("%s汪汪汪\n", d.name)
+	(*a)[id] = &newstudent
 }
 
 func main() {
-	s1 := newDog("xiaohei")
-	s2 := newDog("xiaohua")
-	s1.wang()
-	s2.wang()
+	allstudent = make(mymap, 50)
+	allstudent.addnew(1, "小明")
+	fmt.Printf("type:%T,value:%v", allstudent, *allstudent[1])
 }

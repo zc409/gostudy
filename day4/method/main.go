@@ -1,8 +1,11 @@
 package main
 
 import "fmt"
+//标识符：变量名 函数名 类型名 方法名
+//go语言中如果标识符首字母是大写的，就表示对外部包可见
 
-type dog struct {
+// Dog 首字母大写需要添加注释
+type Dog struct {
 	name   string
 	gender string
 }
