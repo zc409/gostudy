@@ -1,33 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
-type student struct {
-	id   int
-	name string
-}
-
-type mymap map[int]*student
-
-var allstudent mymap
-
-// func newStudent(id int,name string)*student{
-// 	return &student{
-// 		id: id,
-// 		name: name,
-// 	}
-// }
-
-func (a *mymap) addnew(id int, name string) {
-	var newstudent = student{
-		id:   id,
-		name: name,
-	}
-	(*a)[id] = &newstudent
+type person struct {
+	X string `json:"name"`
+	Y int    `json:"age"`
 }
 
 func main() {
-	allstudent = make(mymap, 50)
-	allstudent.addnew(1, "小明")
-	fmt.Printf("type:%T,value:%v", allstudent, *allstudent[1])
+	s1 := person{
+		X: "小红",
+		Y: 18,
+	}
+	js1, err := json.Marshal(s1)
+	if err != nil {
+		fmt.Printf("wrong because of %v", err)
+		return
+	}
+	fmt.Printf("value:%v\n", string(js1))
+	str := `{"name":"小明","age":18}`
+	s2 := []byte(str)
+	var s3 person
+	json.Unmarshal(s2, &s3)
+	fmt.Printf("value:%#v\n", s3)
+	fmt.Println(s3)
+	fmt.Println(s1)
+
 }
