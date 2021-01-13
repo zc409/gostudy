@@ -1,0 +1,34 @@
+package main
+
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
+func copyfile() {
+	f, err := os.Open("./main.go")
+	if err != nil {
+		fmt.Printf("err:%v\n", err)
+		return
+	}
+	defer f.Close()
+
+	dts, err := os.OpenFile("./test.txt", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Printf("err:%v\n", err)
+		return
+	}
+	defer dts.Close()
+
+	n, err := io.Copy(dts, f)
+	if err != nil {
+		fmt.Printf("copy error,err:%v\n", err)
+		return
+	}
+	fmt.Printf("success,write %v", n)
+}
+
+func main() {
+	copyfile()
+}
