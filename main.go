@@ -1,9 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"log"
+)
 
 func main() {
-	var a []byte
-	a = []byte{'a', 'b'}
-	fmt.Println(a)
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
+	log.Println("测试日志")
 }
