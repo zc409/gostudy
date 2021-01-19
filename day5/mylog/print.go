@@ -2,11 +2,10 @@ package mylog
 
 import (
 	"fmt"
+	"runtime"
 	"strings"
 	"time"
 )
-
-
 
 //Newloger create Mylog type
 func Newloger(l string) Mylog {
@@ -46,7 +45,13 @@ func (m Mylog) compare(l string) bool {
 func (m Mylog) printlog(slevel string, content string) {
 	if m.compare(slevel) {
 		timenow := time.Now().Format("2006-01-02 15:04:05")
-		fmt.Printf("%v [%s] %s\n", timenow, slevel, content)
+		_, file, line, ok := runtime.Caller(2)
+		if !ok {
+			fmt.Printf("get line number err!")
+			return
+		}
+		linems := fmt.Sprintf("%v:%v", file, line)
+		fmt.Printf("%v [%s] %s %s\n", timenow, slevel, linems, content)
 	}
 }
 
