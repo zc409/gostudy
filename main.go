@@ -2,15 +2,22 @@ package main
 
 import (
 	"fmt"
-	"runtime"
+	"reflect"
 )
 
+type student struct {
+	Name string `ini:"name"`
+	Age  int    `ini:"age"`
+}
+
+func setstudent(s interface{}) {
+	v := reflect.ValueOf(s).Elem()
+	v.FieldByName("Name").Set(reflect.ValueOf("xiaoming"))
+	v.FieldByName("Age").Set(reflect.ValueOf(18))
+}
+
 func main() {
-	_, file, line, ok := runtime.Caller(0)
-	if !ok {
-		fmt.Printf("get line number wrong!\n")
-		return
-	}
-	tmps := fmt.Sprintf("%v:%v", file, line)
-	fmt.Print(tmps)
+	var stu student
+	setstudent(&stu)
+	fmt.Println(stu)
 }

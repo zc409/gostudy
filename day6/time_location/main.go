@@ -20,6 +20,7 @@ func main() {
 		return
 	}
 	res := yestd.Sub(now)
+	fmt.Println(yestd.Format("01-02-2006"))
 	//格式化为小时输出，保留2位小数点
 	fmt.Printf("%.2f", res.Hours())
 }
