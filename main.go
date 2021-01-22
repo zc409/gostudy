@@ -2,22 +2,16 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	"strconv"
 )
 
-type student struct {
-	Name string `ini:"name"`
-	Age  int    `ini:"age"`
-}
-
-func setstudent(s interface{}) {
-	v := reflect.ValueOf(s).Elem()
-	v.FieldByName("Name").Set(reflect.ValueOf("xiaoming"))
-	v.FieldByName("Age").Set(reflect.ValueOf(18))
-}
-
 func main() {
-	var stu student
-	setstudent(&stu)
-	fmt.Println(stu)
+	a := "123"
+	b ,err:= strconv.ParseInt(a, 10, 64)
+	if err!=nil{
+		fmt.Println(err)
+		return
+	}
+	fmt.Printf("type:%T,value:%v", b, b)
+
 }
