@@ -88,9 +88,11 @@ func Setcfg(ptr interface{}, path string) (err error) {
 			}
 			//遍历ini文件中[]下面的行
 		} else {
+			//空行跳过
 			if len(linecontent) == 0 {
 				continue
 			}
+			//不包含=的行返回错误
 			if strings.Index(linecontent, "=") == -1 {
 				err = fmt.Errorf("format wrong need =,at line:%d", linenum)
 				return
@@ -99,10 +101,13 @@ func Setcfg(ptr interface{}, path string) (err error) {
 				key := strings.TrimSpace(linecontent[:tmpindex])
 				value := strings.TrimSpace(linecontent[tmpindex+1:])
 				//fmt.Println(structname, key, value)
+				//遍历二层结构体
 				for x := 0; x < vStruct.FieldByName(structname).NumField(); x++ {
 					vvtagname := strings.TrimSpace(vStruct.FieldByName(structname).Type().Field(x).Tag.Get("ini"))
+					//判断二层结构体中的tag是否和行中的key相等
 					if vvtagname == key {
 						vvtype := vStruct.FieldByName(structname).Type().Field(x).Type.Kind()
+						//判断二层结构体中字段类型，并根据类型对二层结构体字段赋值
 						if vvtype == reflect.String {
 							vStruct.FieldByName(structname).Field(x).SetString(value)
 						}
