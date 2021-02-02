@@ -1,0 +1,7 @@
+2021-01-30 19:53:56 [warn] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:16 这是一个warn级别的日志
+2021-01-30 19:53:56 [error] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:17 这是一个error级别的日志
+2021-01-30 19:53:56 [fatal] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:18 这是一个fatal级别的日志
+2021-01-30 19:53:58 [info] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:15 这是一个info级别的日志
+2021-01-30 19:53:58 [warn] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:16 这是一个warn级别的日志
+2021-01-30 19:53:58 [error] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:17 这是一个error级别的日志
+2021-01-30 19:53:58 [fatal] D:/gogo/src/github.com/zc409/gostudy/day5/homework_log/main.go:18 这是一个fatal级别的日志
