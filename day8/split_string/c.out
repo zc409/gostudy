@@ -1,0 +1,16 @@
+mode: set
+github.com/zc409/gostudy/day8/split_string/split.go:4.48,8.10 4 1
+github.com/zc409/gostudy/day8/split_string/split.go:39.2,39.12 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:8.10,9.36 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:18.3,18.18 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:9.36,10.32 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:10.32,13.10 3 1
+github.com/zc409/gostudy/day8/split_string/split.go:14.10,16.5 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:18.18,19.18 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:19.18,20.24 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:20.24,22.6 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:22.11,23.11 1 0
+github.com/zc409/gostudy/day8/split_string/split.go:25.10,26.30 1 1
+github.com/zc409/gostudy/day8/split_string/split.go:26.30,29.6 2 1
+github.com/zc409/gostudy/day8/split_string/split.go:29.11,31.11 2 1
+github.com/zc409/gostudy/day8/split_string/split.go:34.9,36.4 1 1
