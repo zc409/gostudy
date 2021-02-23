@@ -1,8 +1,12 @@
 package split_string
 
+import (
+	"strings"
+)
+
 //Split self strings.Split
 func Split(source string, sep string) []string {
-	res := make([]string, 0)
+	res := make([]string, 0, strings.Count(source, sep)+1)
 	run := true
 	var index int
 	for run {
@@ -37,4 +41,12 @@ func Split(source string, sep string) []string {
 
 	}
 	return res
+}
+
+//Fib 斐波那契数列
+func Fib(n int) int {
+	if n < 2 {
+		return n
+	}
+	return Fib(n-1) + Fib(n-2)
 }
