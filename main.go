@@ -4,25 +4,19 @@ import (
 	"fmt"
 )
 
-type testtmp struct {
-	str string
-	sep string
-}
-
-type test []testtmp
-
 func main() {
-	tests :=make(test,3,10)
-	tests = test{
-		{str: "abc", sep: "b"},
-		{str: "asc", sep: "s"},
-		{str: "wer", sep: "e"},
+	type test struct {
+		score  int
+		member string
 	}
-	for index, v := range tests {
-		fmt.Printf("index=%v,value=%#v\n", index, v)
+	type t []test
+	t1 := []test{
+		{score: 901, member: "php1"},
+		{score: 902, member: "php2"},
+		{score: 903, member: "php3"},
+		{score: 904, member: "php4"},
 	}
-	fmt.Printf("%#v\n", tests[0])
-	tests = append(tests, testtmp{str: "test", sep: "test"})
-	fmt.Printf("%v\n", tests[3].str)
-
+	for _,i:=range t1{
+		fmt.Println(i)
+	}
 }
